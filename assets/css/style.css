@@ -1,0 +1,6 @@
+.modal-info {
+    width: 95%;
+    height: 95%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.575);
+}

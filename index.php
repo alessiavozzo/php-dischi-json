@@ -12,6 +12,8 @@
     <!-- fa -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
 
 <body>
@@ -23,7 +25,7 @@
         <header id="site_header">
             <nav class="navbar bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand text-white" href="#">
                         LOGO
                     </a>
                 </div>
@@ -31,7 +33,7 @@
         </header>
 
         <!-- main with discs -->
-        <main id="site_main" class="py-5 bg-secondary">
+        <main id="site_main" class="py-5 bg-secondary position-relative">
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
                     <div class="col gy-4" v-for="(disc,index) in dischi">
@@ -52,12 +54,15 @@
         </main>
 
         <!-- modal: overlayed -->
-        <div v-if="isModalOpen" class="modal-info position-absolute top-0 start-0 w-100 h-100 d-flex justify-content-center align-items-center bg-dark">
-            <i class="fa-solid fa-xmark fs-3 position-absolute end-0 top-0 text-white" @click="closeModal()"></i>
+        <div v-if="isModalOpen" class="modal-info position-absolute top-50 start-50 d-flex justify-content-center align-items-center rounded">
 
-            <div class="card">
+            <!-- x to close modal -->
+            <i class="fa-solid fa-xmark fs-3 position-absolute end-0 top-0 text-white m-4 p-3 border border-light rounded" @click="closeModal()"></i>
+
+            <!-- modal-content -->
+            <div class="card bg-dark">
                 <img class="card-img-top" :src="activeDisc.poster" alt="Title" />
-                <div class="card-body">
+                <div class="card-body text-white text-center">
                     <h4 class="card-title">{{activeDisc.title}}</h4>
                     <div class="card-text">{{activeDisc.author}}</div>
                     <div class="card-text">{{activeDisc.year}}</div>
