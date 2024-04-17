@@ -15,19 +15,24 @@
 
     <div id="app">
 
-        <ul class="nav justify-content-center  ">
-            <li class="nav-item">
-                <a class="nav-link active" href="#" aria-current="page">Active link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled link</a>
-            </li>
-        </ul>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                <div class="col" v-for="disc in dischi">
+                    <div class="card">
+                        <img class="card-img-top" :src="disc.poster" alt="Title" />
+                        <div class="card-body">
+                            <h4 class="card-title">{{disc.title}}</h4>
+                            <div class="card-text">{{disc.author}}</div>
+                            <div class="card-text">{{disc.year}}</div>
+                        </div>
+                    </div>
 
-        <h1>{{hello}}</h1>
+                </div>
+            </div>
+        </div>
+
+
+
     </div>
 
 

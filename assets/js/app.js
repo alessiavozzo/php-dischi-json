@@ -3,10 +3,18 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            hello: "ok"
+            apiUrl: "api.php",
+            dischi: []
         }
     },
     created() {
-        console.log("ok");
+        axios
+            .get(this.apiUrl)
+            .then(response => {
+                console.log(response);
+                console.log(response.data);
+                this.dischi = response.data;
+            }
+            )
     }
 }).mount('#app')
