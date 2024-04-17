@@ -17,8 +17,8 @@
 
         <div class="container">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="col" v-for="disc in dischi">
-                    <div class="card">
+                <div class="col" v-for="(disc,index) in dischi">
+                    <div class="card" @click="showDetails(index)">
                         <img class="card-img-top" :src="disc.poster" alt="Title" />
                         <div class="card-body">
                             <h4 class="card-title">{{disc.title}}</h4>
@@ -27,6 +27,17 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </div>
+
+        <div v-if="isModalOpen" class="text-center">
+            <div class="card" @click="showDetails(index)">
+                <img class="card-img-top" :src="activeDisc.poster" alt="Title" />
+                <div class="card-body">
+                    <h4 class="card-title">{{activeDisc.title}}</h4>
+                    <div class="card-text">{{activeDisc.author}}</div>
+                    <div class="card-text">{{activeDisc.year}}</div>
                 </div>
             </div>
         </div>

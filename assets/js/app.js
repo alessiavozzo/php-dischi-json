@@ -4,7 +4,15 @@ createApp({
     data() {
         return {
             apiUrl: "api.php",
-            dischi: []
+            dischi: [],
+            activeDisc: null,
+            isModalOpen: false,
+        }
+    },
+    methods: {
+        showDetails(index) {
+            this.activeDisc = this.dischi[index];
+            this.isModalOpen = true
         }
     },
     created() {
