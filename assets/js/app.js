@@ -12,7 +12,10 @@ createApp({
     methods: {
         showDetails(index) {
             this.activeDisc = this.dischi[index];
-            this.isModalOpen = true
+            this.isModalOpen = true;
+        },
+        closeModal() {
+            this.isModalOpen = false;
         }
     },
     created() {
